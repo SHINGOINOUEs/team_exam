@@ -41,8 +41,7 @@ class AssignsController < ApplicationController
 
   def email_exist?
     team = find_team(params[:team_id])
-    if team.members.exists?(email: params[:email])
-      redirect_to team_url(team), notice: I18n.t('views.messages.email_already_exists')
+      redirect_to team_url(team), notice: I18n.t('views.messages.email_already_exists')if team.members.exists?(email: params[:email])
     end
   end
 

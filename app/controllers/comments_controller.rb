@@ -24,7 +24,9 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
-    if @comment.destroy
+    return unless @comment.destroy
+
+
       respond_to do |format|
         format.js { render :index }
       end
