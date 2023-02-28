@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
 
       respond_to do |format|
         format.js { render :index }
-      end
+
     end
   end
 
